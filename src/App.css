@@ -1,6 +1,10 @@
 .todo-list-section {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 40px;
+  flex-direction: column;
+  max-width: 750px;
+  margin: 40px auto 0 auto;
+
+  .inputWrapper {
+    margin-top: 18px;
+  }
 }
