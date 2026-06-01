@@ -1,6 +1,7 @@
 import PageTitle from "./components/PageTitle/PageTitle";
 import Input from "./components/Input/Input";
 import DropDownButton from "./components/DropDownButton/DropDownButton";
+import DarkModeButton from "./components/DarkModeButton/DarkModeButton";
 
 import "./App.css";
 
@@ -13,6 +14,7 @@ function App() {
       <div className="inputWrapper">
         <Input />
         <DropDownButton text="All" />
+        <DarkModeButton />
       </div>
     </div>
   );
