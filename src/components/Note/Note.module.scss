@@ -3,26 +3,37 @@
   max-width: 520px;
   width: 100%;
 
-  .content {
+  .contentWrapper {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 8px;
-  }
+    justify-content: space-between;
+    .content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
 
-  .title {
-    font-family: "Kanit", sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    text-transform: uppercase;
-    color: #252525;
-    margin: 0;
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-right: 8px;
+    }
 
-    &.strikethrough {
-      text-decoration: line-through;
-      color: rgba(37, 37, 37, 0.5);
+    .title {
+      font-family: "Kanit", sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-transform: uppercase;
+      color: #252525;
+      margin: 0;
+
+      &.strikethrough {
+        text-decoration: line-through;
+        color: rgba(37, 37, 37, 0.5);
+      }
     }
   }
 }
