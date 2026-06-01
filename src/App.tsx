@@ -1,5 +1,6 @@
 import PageTitle from "./components/PageTitle/PageTitle";
 import Input from "./components/Input/Input";
+import DropDownButton from "./components/DropDownButton/DropDownButton";
 
 import "./App.css";
 
@@ -11,6 +12,7 @@ function App() {
       </div>
       <div className="inputWrapper">
         <Input />
+        <DropDownButton text="All" />
       </div>
     </div>
   );
