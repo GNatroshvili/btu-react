@@ -7,6 +7,8 @@ import Note from "./components/Note/Note";
 import "./App.css";
 
 function App() {
+  const notes = ["Note #1", "Note #2", "Note #3"];
+
   return (
     <div className="todo-list-section">
       <div>
@@ -18,8 +20,13 @@ function App() {
         <DarkModeButton />
       </div>
       <div className="notesContainer">
-        <Note title="Note #1" />
-        <Note title="Note #2" />
+        {notes.map((note, index) => (
+          <Note
+            key={index}
+            title={note}
+            showDivider={index !== notes.length - 1}
+          />
+        ))}
       </div>
     </div>
   );

@@ -7,9 +7,11 @@ import deleteIcon from "../../assets/icons/delete.svg";
 
 type Props = {
   title: string;
+  showDivider?: boolean;
 };
 
 const Note = (props: Props) => {
+  const { title, showDivider = true } = props;
   const [isChecked, setIsChecked] = useState(false);
 
   return (
@@ -20,7 +22,7 @@ const Note = (props: Props) => {
           <h3
             className={`${styles.title} ${isChecked ? styles.strikethrough : ""}`}
           >
-            {props.title}
+            {title}
           </h3>
         </div>
         <div className={styles.buttons}>
@@ -29,7 +31,7 @@ const Note = (props: Props) => {
         </div>
       </div>
 
-      <DividerLine />
+      {showDivider && <DividerLine />}
     </div>
   );
 };
