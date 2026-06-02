@@ -101,3 +101,24 @@
     cursor: not-allowed;
   }
 }
+
+:global([data-theme="dark"]) {
+  .modal {
+    background: #1e1e1e;
+    border: 1px solid #f7f7f7;
+  }
+
+  .title {
+    color: #ffffff;
+  }
+
+  .input {
+    background: #2a2a2a;
+    border: 1px solid #f7f7f7;
+    color: #ffffff;
+
+    &:focus {
+      border-color: #ffffff;
+    }
+  }
+}
