@@ -16,4 +16,16 @@
     flex-direction: column;
     gap: 17px;
   }
+
+  .emptyState {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .emptyState img {
+    max-width: 100%;
+    height: auto;
+  }
 }

@@ -89,4 +89,9 @@
   &:hover {
     background: #534cc2;
   }
+
+  &:disabled {
+    background: #b5b1f0;
+    cursor: not-allowed;
+  }
 }

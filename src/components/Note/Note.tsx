@@ -1,24 +1,27 @@
-import { useState } from "react";
 import styles from "./Note.module.scss";
 import DividerLine from "../DividerLine/DividerLine";
 import Checkbox from "../Checkbox/Checkbox";
 
 type Props = {
   title: string;
+  completed: boolean;
   showDivider?: boolean;
+  onToggle: () => void;
+  onEdit: () => void;
+  onDelete: () => void;
 };
 
 const Note = (props: Props) => {
-  const { title, showDivider = true } = props;
-  const [isChecked, setIsChecked] = useState(false);
+  const { title, completed, showDivider = true, onToggle, onEdit, onDelete } =
+    props;
 
   return (
     <div className={styles.container}>
       <div className={styles.contentWrapper}>
         <div className={styles.content}>
-          <Checkbox checked={isChecked} onChange={setIsChecked} />
+          <Checkbox checked={completed} onChange={onToggle} />
           <h3
-            className={`${styles.title} ${isChecked ? styles.strikethrough : ""}`}
+            className={`${styles.title} ${completed ? styles.strikethrough : ""}`}
           >
             {title}
           </h3>
@@ -28,11 +31,13 @@ const Note = (props: Props) => {
             type="button"
             aria-label="Edit"
             className={`${styles.button} ${styles.editButton}`}
+            onClick={onEdit}
           />
           <button
             type="button"
             aria-label="Delete"
             className={`${styles.button} ${styles.deleteButton}`}
+            onClick={onDelete}
           />
         </div>
       </div>

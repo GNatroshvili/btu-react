@@ -4,15 +4,28 @@ import styles from "./NewNoteModal.module.scss";
 type Props = {
   onClose: () => void;
   onApply: (note: string) => void;
+  initialValue?: string;
+  title?: string;
 };
 
-const NewNoteModal = ({ onClose, onApply }: Props) => {
-  const [note, setNote] = useState("");
+const NewNoteModal = ({
+  onClose,
+  onApply,
+  initialValue = "",
+  title = "NEW NOTE",
+}: Props) => {
+  const [note, setNote] = useState(initialValue);
+
+  const handleApply = () => {
+    const trimmed = note.trim();
+    if (!trimmed) return;
+    onApply(trimmed);
+  };
 
   return (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <h2 className={styles.title}>NEW NOTE</h2>
+        <h2 className={styles.title}>{title}</h2>
 
         <input
           type="text"
@@ -20,6 +33,7 @@ const NewNoteModal = ({ onClose, onApply }: Props) => {
           placeholder="Input your note..."
           value={note}
           onChange={(e) => setNote(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleApply()}
           autoFocus
         />
 
@@ -27,7 +41,11 @@ const NewNoteModal = ({ onClose, onApply }: Props) => {
           <button className={styles.cancel} onClick={onClose}>
             CANCEL
           </button>
-          <button className={styles.apply} onClick={() => onApply(note)}>
+          <button
+            className={styles.apply}
+            onClick={handleApply}
+            disabled={!note.trim()}
+          >
             APPLY
           </button>
         </div>
