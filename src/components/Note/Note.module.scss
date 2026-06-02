@@ -61,12 +61,12 @@
       line-height: 100%;
       letter-spacing: 0%;
       text-transform: uppercase;
-      color: #252525;
+      color: var(--text);
       margin: 0;
 
       &.strikethrough {
         text-decoration: line-through;
-        color: rgba(37, 37, 37, 0.5);
+        color: var(--text-muted);
       }
     }
   }

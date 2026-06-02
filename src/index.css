@@ -1,3 +1,19 @@
+:root {
+  --bg: #ffffff;
+  --text: #252525;
+  --text-muted: rgba(37, 37, 37, 0.5);
+  --surface: #f4f3ff;
+  --field-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #1e1e1e;
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.5);
+  --surface: #2a2a2a;
+  --field-bg: #2a2a2a;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,5 +21,6 @@
 }
 
 body {
-  background: #ffffff;
+  background: var(--bg);
+  transition: background 0.2s ease;
 }

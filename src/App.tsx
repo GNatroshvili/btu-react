@@ -7,12 +7,14 @@ import Note from "./components/Note/Note";
 import AddButton from "./components/AddButton/AddButton";
 import NewNoteModal from "./components/NewNoteModal/NewNoteModal";
 import { useNotes } from "./hooks/useNotes";
+import { useTheme } from "./hooks/useTheme";
 import emptyImage from "./assets/empty.png";
 
 import "./App.css";
 
 function App() {
   const { notes, addNote, editNote, deleteNote, toggleNote } = useNotes();
+  const { theme, toggleTheme } = useTheme();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
 
@@ -50,7 +52,7 @@ function App() {
       <div className="inputWrapper">
         <Input />
         <DropDownButton text="All" />
-        <DarkModeButton />
+        <DarkModeButton isDark={theme === "dark"} onToggle={toggleTheme} />
       </div>
 
       {notes.length === 0 ? (

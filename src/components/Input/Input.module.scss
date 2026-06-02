@@ -24,9 +24,11 @@
     font-family: inherit;
     font-size: 14px;
     box-sizing: border-box;
+    background: var(--field-bg);
+    color: var(--text);
 
     &::placeholder {
-      color: #757575;
+      color: var(--text-muted);
     }
   }
 }

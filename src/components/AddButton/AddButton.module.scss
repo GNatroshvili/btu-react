@@ -16,4 +16,9 @@
     border: 2px solid #6c63ff;
     transition: 0.2s ease;
   }
+
+  @media (max-width: 600px) {
+    bottom: 24px;
+    right: 24px;
+  }
 }

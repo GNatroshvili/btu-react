@@ -1,11 +1,19 @@
 import styles from "./DarkModeButton.module.scss";
+import moonIcon from "../../assets/icons/moon.svg";
+import lightIcon from "../../assets/icons/light.svg";
 
-const DarkModeButton = () => {
+type Props = {
+  isDark: boolean;
+  onToggle: () => void;
+};
+
+const DarkModeButton = ({ isDark, onToggle }: Props) => {
   return (
     <img
-      src="/src/assets/icons/moon.svg"
-      alt="Dark Mode"
+      src={isDark ? lightIcon : moonIcon}
+      alt={isDark ? "Light Mode" : "Dark Mode"}
       className={styles.icon}
+      onClick={onToggle}
     />
   );
 };
