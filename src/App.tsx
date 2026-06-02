@@ -3,6 +3,7 @@ import Input from "./components/Input/Input";
 import DropDownButton from "./components/DropDownButton/DropDownButton";
 import DarkModeButton from "./components/DarkModeButton/DarkModeButton";
 import Note from "./components/Note/Note";
+import AddButton from "./components/AddButton/AddButton";
 
 import "./App.css";
 
@@ -28,6 +29,7 @@ function App() {
           />
         ))}
       </div>
+      <AddButton />
     </div>
   );
 }
