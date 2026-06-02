@@ -17,8 +17,13 @@ function App() {
   const { theme, toggleTheme } = useTheme();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
+  const [search, setSearch] = useState("");
 
   const editingNote = notes.find((note) => note.id === editingId);
+
+  const filteredNotes = notes.filter((note) =>
+    note.title.toLowerCase().includes(search.trim().toLowerCase())
+  );
 
   const openAddModal = () => {
     setEditingId(null);
@@ -50,7 +55,7 @@ function App() {
         <PageTitle text="TODO LIST" />
       </div>
       <div className="inputWrapper">
-        <Input />
+        <Input value={search} onChange={(e) => setSearch(e.target.value)} />
         <DropDownButton text="All" />
         <DarkModeButton isDark={theme === "dark"} onToggle={toggleTheme} />
       </div>
@@ -59,14 +64,16 @@ function App() {
         <div className="emptyState">
           <img src={emptyImage} alt="No notes yet" />
         </div>
+      ) : filteredNotes.length === 0 ? (
+        <p className="noResults">No notes match "{search}"</p>
       ) : (
         <div className="notesContainer">
-          {notes.map((note, index) => (
+          {filteredNotes.map((note, index) => (
             <Note
               key={note.id}
               title={note.title}
               completed={note.completed}
-              showDivider={index !== notes.length - 1}
+              showDivider={index !== filteredNotes.length - 1}
               onToggle={() => toggleNote(note.id)}
               onEdit={() => openEditModal(note.id)}
               onDelete={() => deleteNote(note.id)}
