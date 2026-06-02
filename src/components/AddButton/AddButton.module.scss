@@ -1,7 +1,7 @@
 .addButton {
   position: relative;
   top: 493px;
-  left: 701px;
+  left: 668px;
   width: 50px;
   height: 50px;
   opacity: 1;
@@ -17,8 +17,12 @@
     transition: 0.2s ease;
   }
 
-  @media (max-width: 600px) {
-    bottom: 24px;
-    right: 24px;
+  @media (max-width: 850px) {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    top: auto;
+    left: auto;
+    z-index: 1000;
   }
 }
