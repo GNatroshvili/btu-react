@@ -22,7 +22,7 @@ function App() {
   const editingNote = notes.find((note) => note.id === editingId);
 
   const filteredNotes = notes.filter((note) =>
-    note.title.toLowerCase().includes(search.trim().toLowerCase())
+    note.title.toLowerCase().includes(search.trim().toLowerCase()),
   );
 
   const openAddModal = () => {
@@ -63,6 +63,7 @@ function App() {
       {notes.length === 0 ? (
         <div className="emptyState">
           <img src={emptyImage} alt="No notes yet" />
+          <p className="emptyStateText">Empty...</p>
         </div>
       ) : filteredNotes.length === 0 ? (
         <p className="noResults">No notes match "{search}"</p>
