@@ -2,8 +2,6 @@ import { useState } from "react";
 import styles from "./Note.module.scss";
 import DividerLine from "../DividerLine/DividerLine";
 import Checkbox from "../Checkbox/Checkbox";
-import editIcon from "../../assets/icons/edit.svg";
-import deleteIcon from "../../assets/icons/delete.svg";
 
 type Props = {
   title: string;
@@ -26,8 +24,16 @@ const Note = (props: Props) => {
           </h3>
         </div>
         <div className={styles.buttons}>
-          <img src={editIcon} alt="Edit" className={styles.button} />
-          <img src={deleteIcon} alt="Delete" className={styles.button} />
+          <button
+            type="button"
+            aria-label="Edit"
+            className={`${styles.button} ${styles.editButton}`}
+          />
+          <button
+            type="button"
+            aria-label="Delete"
+            className={`${styles.button} ${styles.deleteButton}`}
+          />
         </div>
       </div>
 

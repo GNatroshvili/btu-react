@@ -18,6 +18,40 @@
       align-items: center;
       gap: 10px;
       padding-right: 8px;
+
+      .button {
+        width: 18px;
+        height: 18px;
+        padding: 0;
+        border: none;
+        background-color: #cdcdcd;
+        cursor: pointer;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        transition: background-color 0.2s ease;
+      }
+
+      .editButton {
+        -webkit-mask-image: url("../../assets/icons/edit.svg");
+        mask-image: url("../../assets/icons/edit.svg");
+
+        &:hover {
+          background-color: #6c63ff;
+        }
+      }
+
+      .deleteButton {
+        -webkit-mask-image: url("../../assets/icons/delete.svg");
+        mask-image: url("../../assets/icons/delete.svg");
+
+        &:hover {
+          background-color: #e53935;
+        }
+      }
     }
 
     .title {
